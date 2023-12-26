@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .snowflake {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ground {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #fff;
+      transition: height 1s ease; /* アニメーションの設定 */
+    }
+
+    .text {
+      position: absolute;
+      bottom: 50%; /* 中央に配置 */
+      left: 50%;
+      transform: translate(-50%, 50%); /* 水平方向と垂直方向の両方に対して中央揃え */
+      text-align: center; /* テキストを中央揃えにする */
+      color: #000; /* テキストの色を設定 */
+    }
+  </style>
+</head>
+<body>
+  <div class="ground"></div>
+  <div class="text"><h2>冬だあああああああああ</h2><br>by 冬が好きな人</div>
+</body>
+  <script>
+    let groundHeight = 20;
+
+    // 雪の粒子を作成する関数
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'snowflake';
+      document.body.appendChild(snowflake);
+
+      // 初期位置と速度をランダムに設定
+      const initialX = Math.random() * window.innerWidth;
+      const initialY = Math.random() * window.innerHeight;
+      const speed = 1 + Math.random() * 2; // 速度を調整
+
+      snowflake.style.left = initialX + 'px';
+      snowflake.style.top = initialY + 'px';
+
+      // アニメーション
+      function moveSnowflake() {
+        const newY = snowflake.getBoundingClientRect().top + speed;
+        
+        // 画面外に出たら上に戻す
+        if (newY > window.innerHeight) {
+          snowflake.style.top = -10 + 'px';
+          snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        } else {
+          snowflake.style.top = newY + 'px';
+        }
+
+        requestAnimationFrame(moveSnowflake);
+      }
+
+      moveSnowflake();
+    }
+
+    // 雪の粒子を複数生成
+    for (let i = 0; i < 100; i++) {
+      createSnowflake();
+    }
+
+    // 地面が上昇するアニメーション
+    function riseGround() {
+      groundHeight += 0.05; // 速度
+      document.querySelector('.ground').style.height = groundHeight + 'px';
+      requestAnimationFrame(riseGround);
+    }
+
+    riseGround();
+    
+    setTimeout(() => {
+  const textElement = document.querySelector('.text');
+  textElement.style.color = '#fff'; // 文字色を白に変更
+  textElement.style.backgroundColor = '#000';});
+	  </script>
+</body>
+</html

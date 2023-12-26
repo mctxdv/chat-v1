@@ -1,0 +1,16 @@
+RewriteEngine on
+
+# ディレクトリの存在を確認して、拡張子が.htmlで終わる場合は拡張子なしのURLにリダイレクト
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 拡張子が.htmlのURLを拡張子なしにリダイレクト（ブラウザ上で表示されるURLを変更）
+RewriteCond %{THE_REQUEST} \.(html)\ HTTP
+RewriteRule ^(.*)\.(html)$ /$1 [R=301,L]
+
+# index.html をデフォルトのドキュメントとして処理
+DirectoryIndex index.html
+
+# / にアクセスされた場合は index.html にリダイレクト
+RewriteRule ^$ /index.html [L]
