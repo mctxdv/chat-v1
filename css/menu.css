@@ -1,0 +1,160 @@
+body {
+  background: gray;
+  background-size: 800% 800%;
+  animation: GradietionAnimation 9s ease infinite;
+}
+
+@keyframes GradietionAnimation {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+/* Navbar styles */
+#navbar {
+  background-color: #f9f9f9;
+  width: 60%;
+  padding: 10px;
+  margin: 0 auto;
+  position: fixed;
+}
+
+#logo img {
+  height: 120px;
+  align-items: center;
+}
+
+#links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px; /* リンクのテキストサイズを調整 */
+  transition: font-size 0.3s ease; /* フォントサイズの変化をアニメーション化 */
+}
+
+#links a:hover {
+  text-decoration: underline;
+  font-size: 24px; /* ホバー時のテキストサイズを調整 */
+}
+
+#maincontent {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 0 auto;
+  width: 60%;
+}
+
+#t1 {
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+  font-size: xx-large;
+  font-weight: lighter;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/index-thumb.jpg);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: center top;
+}
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* レスポンシブデザイン */
+  .container {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* ナビゲーションバーを最上部に固定する */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /* 画像サイズを小さくする */
+  img {
+    height: auto;
+  }
+}
+
+video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+p {
+  text-align: center;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4em;
+}
+
+p#vw {
+  font-size: 5vw;
+}
+
+p#vh {
+  font-size: 5vh;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #c7e6c2;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #a6d2a0;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  background-color: #89b77d;
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.content2 {
+  text-align: center;
+}
+
+h1 {
+  padding: 0.25em 0.5em; /* 上下 左右の余白 */
+  color: #494949; /* 文字色 */
+  background: transparent; /* 背景透明に */
+  border-left: solid 5px #7db4e6; /* 左線 */
+}
+
+h1, h2, h3 {
+  font-weight: normal; /* 太字を解除 */
+}
