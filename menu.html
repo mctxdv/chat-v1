@@ -3,12 +3,48 @@
 <head>
   <link rel="stylesheet" href="css/menu.css">
   <script src="loadscript.js"></script>
-  <title>devtx_mc - ホーム</title>
+  <title>管理者ログイン</title>
   <link rel="icon" type="image/gif" href="images/logo_white.gif">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .n {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="maincontent">
-  <h1>メニュー</h1>
-  <h2>Comming soon...</h2>
+  <h1>管理者ログイン</h1>
+  <input type="text" id="password" placeholder="パスワード"><button onclick="Login()">ログイン</button>
+  <invalid style="color: red;" class="n">パスワードが間違っています</invalid>
+  <br>
+  <div id="maincontent" class="urgt">
+    <h1>ようこそ</h1>
+    <a href="cookie_clicker/index.html">Cookie Clicker</a><br>
+    <a href="savecode_genarator/index.html">Cookie Clicker セーブデータ作成</a>
+  </div>
+  <script>
+    // loadscript.js
+
+function Login() {
+  var passwordInput = document.getElementById("password");
+  var invalidMessage = document.querySelector(".invalid");
+  var urgtContent = document.querySelector(".urgt");
+
+  if (passwordInput.value === "fuon394") {
+    invalidMessage.style.display = "none";
+    urgtContent.classList.remove("n");
+    setTimeout(function () {
+      urgtContent.classList.add("n");
+    }, 2000);
+  } else {
+    invalidMessage.style.display = "block";
+    setTimeout(function () {
+      invalidMessage.style.display = "none";
+    }, 2000);
+  }
+}
+
+  </script>
+</body>
 </div>
