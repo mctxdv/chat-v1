@@ -73,9 +73,6 @@ window.onload = async function() {
       }
     }
   });
-}
-
-document.addEventListener("DOMContentLoaded", function () {
     const openModalBtn = document.getElementById("openModalBtn");
     const modal = document.getElementById("myModal");
     const closeBtn = document.querySelector(".close");
@@ -93,4 +90,5 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
-});
+}
+
